@@ -6,7 +6,9 @@ import java.util.Random;
 public class _00_ArrayCheatSheet {
 
 	public static void main(String[] args) {
-		int smoll= 0;
+		int small= 0;
+		int big= 0;
+		int lastnumber = 0;
 		// 1. make an array of 5 Strings
 		String[] sentences = new String[5];
 		// 2. print the third element in the array
@@ -32,14 +34,23 @@ public class _00_ArrayCheatSheet {
 
 		// 8. without printing the entire array, print only the smallest number in the
 		// array
+		small = numbers[0];
 		for (int i = 0; i < numbers.length; i++) {
-			if (numbers[i] < i++) {
-				smoll = numbers[i];
+			if (small > numbers[i]) {
+				small = numbers[i];
 			}
 		}
-		System.out.println(smoll);
+		System.out.println("The smallest number is"+small);
 		// 9 print the entire array to see if step 8 was correct
-
+big = numbers[0];
 		// 10. print the largest number in the array.
+		for (int i1 = 0; i1 < numbers.length; i1++) {
+			if (big < numbers[i1]) {
+				big = numbers[i1];
+			}
+			//Resetting lastnumber to be current number
+			lastnumber=numbers[i1];
+		}
+		System.out.println("The Biggest Number"+ big);
 	}
 }
