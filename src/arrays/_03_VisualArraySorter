@@ -1,16 +1,19 @@
 /* Paste the code into a new Processing sketch and complete the steps. */
 
 //1. create an array of ints. don't initialize it yet.
-
+int[] integers;
 void setup() {
   //2. set the size of your window
   //  if you are using Processing 3, you cannot use variables
   //  because the developers don't know how programming is supposed to work.
-
+setSize(300,300);
   //3. initialize your array with the built in width variable
-  
+  int[] integers = new int[width]; 
   //4. initialize the ints in the array with random numbers
   //   from 0 to the built in height variable
+  for (int i = 0; i < buttons.length; i++) {
+			
+		}
 
   //5. call the noStroke() method
 
