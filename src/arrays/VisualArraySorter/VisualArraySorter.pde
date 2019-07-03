@@ -1,20 +1,17 @@
-/* Paste the code into a new Processing sketch and complete the steps. */
-
-//1. create an array of ints. don't initialize it yet.
 int[] integers;
- Random rand = new Random();
 void setup() {
   //2. set the size of your window
   //  if you are using Processing 3, you cannot use variables
   //  because the developers don't know how programming is supposed to work.
-setSize(300,300);
+size(500,500);
   //3. initialize your array with the built in width variable
-  int[] integers = new int[width]; 
+  integers = new int[width]; 
   //4. initialize the ints in the array with random numbers
   //   from 0 to the built in height variable
-  for (int i = 0; i < buttons.length; i++) {
-			integers[i]= rand.nextInt();
-		}
+  for (int i = 0; i < width; i++) {
+    int rand = int(random(height));
+      integers[i]= rand;
+    }
 
   //5. call the noStroke() method
 noStroke();
@@ -24,23 +21,31 @@ void draw() {
   //6. set the background color with background(r, g, b);
 background(0,250,250);
   //7. set the color for your graph
-
+fill(255,9,255);
   //8. draw a rectangle for each int in your array.
-  
+  for (int i = 0; i < width; i++) {
   //   the x value will be the current index in the array
+  rect(i, height, 1, -integers[i]);
   //   the y value will the height variable
   //   the width is 1 (one)
   //   the height is negative the value of the element at the current index of the array
-
-
+  }
   //9. call the stepSort method
-
+stepSort(integers);
   //10. extract the code that randomizes the array into a method.
 
   //11. call the method you made in step 10 when the mouse is pressed
-
 }
-
+void mousePressed(){
+ randomizer(); 
+ print("thisisworking");
+}
+public void randomizer(){
+  for (int i = 0; i < width; i++) {
+    int rand = int(random(height));
+      integers[i]= rand;
+    }
+}
 void stepSort(int[] arr) {
   for (int i = 1; i < arr.length; i++) {
     if (arr[i - 1] > arr[i]) {
